@@ -1,0 +1,49 @@
+extends layout
+block content
+  .section.hero
+    .container
+      .row
+        .one-half.column
+          h4.hero-heading Welcome to #{vars.name}
+          h6 This is #{vars.name} REY app page. Below are the configuration variables to start checking out reputation.
+          h6 You can also query the app from your browser to check out your score.
+          a.button.button-primary(href='http://reputation.network') View my score
+        .one-half.column.phones
+          img.phone(src='/img/iphone.png')
+  .section.values
+    .container
+      h3 Configuration
+      br
+      .row
+        .one-third.column.value
+          h5.value-heading Name
+          p.value-description= vars.name
+        .one-third.column.value
+          h5.value-heading App address
+          p.value-description= vars.address
+        .one-third.column.value
+          h5.value-heading Blockchain URL
+          p.value-description= vars.blockchainNodeUrl
+
+      .row
+        a.button.button-primary(href='/manifest') View manifest
+
+      .row
+        br
+        h5.value-heading Scores
+
+      .row
+        pre=JSON.stringify(vars.scores).replace(/[\{\s\}]/g,"").replace(/,/g,"\n")
+
+  .section.get-help
+    .container
+      h3.section-heading Need help getting started?
+      p.section-description
+        = "Visit "
+        a(href='http://rey.rtfd.io') REY docs
+        = " to know how to query this REY app."
+      a.button.button-primary(href='http://rey.rtfd.io') View REY Docs
+    .container
+      br
+      br
+      img(src='/img/rey.svg')
