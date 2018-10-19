@@ -9,6 +9,7 @@ module.exports = (app, vars)->
     address: vars.address,
     app_url: vars.appUrl,
     app_reward: 0,
+    app_schema: { score: 30 },
     app_dependencies: []
   scores = vars.scores
 
